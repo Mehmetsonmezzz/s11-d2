@@ -1,9 +1,12 @@
-import './App.css';
+import "./App.css";
+import Login from "./components/Login";
+import Header from "./layouts/Header";
 
 function App() {
   return (
     <div className="App">
-      <h1>Client Auth Projesi: Friends</h1>
+      <Header />
+      <Login />
     </div>
   );
 }

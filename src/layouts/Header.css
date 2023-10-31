@@ -1,0 +1,20 @@
+
+.mainHeaderContainer{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.navContainer{
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: auto;
+    
+}
+.navContainerItem{
+    background-color: black;
+    color:white;
+    margin: 3px;
+    padding: 15px;
+   
+    
+}
