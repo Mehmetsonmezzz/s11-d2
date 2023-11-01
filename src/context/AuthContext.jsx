@@ -10,6 +10,19 @@ export default function AuthProvider ({children, ...rest}) {
 
     const [loggindUser, setLoggindUser] = useState({});
     const [loginError,setLoginError]=useState(null);
+    const baseUrl='http://localhost:9000/api/';
+   
+   
+    const axiosWithAuthInstance=axios.create({
+    
+      baseURL:baseUrl,
+      timeout:1000,
+      headers:{
+          'authorization':loggindUser.token
+      }
+    
+  });
+
 
     const loginUserAPI=(data)=>{
       axios.post('http://localhost:9000/api/login', data)
@@ -32,7 +45,7 @@ export default function AuthProvider ({children, ...rest}) {
     setLoggindUser({});
   }
   return (
-    <AuthContext.Provider value={{auth: loggindUser,loginUserAPI,isLoggedIn,logout,loginError}}>
+    <AuthContext.Provider value={{auth: loggindUser,loginUserAPI,isLoggedIn,logout,loginError,axiosWithAuthInstance}}>
       {children}
     </AuthContext.Provider>
   )

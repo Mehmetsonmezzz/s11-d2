@@ -3,8 +3,9 @@ import { useState } from "react";
 import Login from "./components/Login";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
-
+import FriendList from "./components/FriendList";
 import { Switch, Route } from "react-router-dom";
+import AddFriend from "./components/AddFriend";
 function App() {
   return (
     <div className="App">
@@ -12,10 +13,10 @@ function App() {
 
       <Switch>
         <PrivateRoute path="/friends/add/">
-          <div>friendadd form</div>
+          <AddFriend />
         </PrivateRoute>
         <PrivateRoute path="/friends/">
-          <div>friends div</div>
+          <FriendList />
         </PrivateRoute>
         <Route path="/login/">
           <Login />
