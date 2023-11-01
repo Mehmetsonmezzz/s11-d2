@@ -4,18 +4,17 @@ import Login from "./components/Login";
 import Header from "./components/Header";
 import PrivateRoute from "./components/PrivateRoute";
 
-import { Switch, Route, Link } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 function App() {
-  const [loggindUser, setLoggindUser] = useState({});
   return (
     <div className="App">
       <Header />
 
       <Switch>
-        <PrivateRoute auth={loggindUser} path="/friends/add/">
+        <PrivateRoute path="/friends/add/">
           <div>friendadd form</div>
         </PrivateRoute>
-        <PrivateRoute auth={loggindUser} path="/friends/">
+        <PrivateRoute path="/friends/">
           <div>friends div</div>
         </PrivateRoute>
         <Route path="/login/">
