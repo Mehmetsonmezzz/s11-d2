@@ -1,6 +1,6 @@
 import {useState,createContext} from "react"
 import axios from "axios";
-
+import useLocalStorage from "../hooks/useLocalStorage";
 export const  AuthContext =createContext();
 
 
@@ -8,7 +8,7 @@ export default function AuthProvider ({children, ...rest}) {
 
 
 
-    const [loggindUser, setLoggindUser] = useState({});
+    const [loggindUser, setLoggindUser] = useLocalStorage({},'friends Project');
     const [loginError,setLoginError]=useState(null);
     const baseUrl='http://localhost:9000/api/';
    
